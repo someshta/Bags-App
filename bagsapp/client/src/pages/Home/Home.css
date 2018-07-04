@@ -1,0 +1,136 @@
+.container-fluid{
+    background-color: white;
+}
+
+#reminder{
+    display: block;
+    margin: 0 auto;
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+}
+
+
+
+.grey{
+    background-color: white;
+    padding: 50px;
+    margin: auto;
+}
+
+p{
+    font-family: Chap;
+    font-size: 20px;
+}
+
+h2{
+    font-family: Olive;
+}
+
+.hesitate{
+    text-align: right;
+}
+
+#save {
+    display: block;
+    margin: 0 auto;
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+}
+
+.facts{
+    background-color: #FF5A00;
+    max-width: 55%;
+    margin: auto;
+}
+
+#facts{
+    text-align: center;
+    font-family: Olive;
+    font-size: 25px;
+    display: block;
+    margin: 50px auto;
+}
+
+ul{
+    font-family: chap;
+    font-size: 22px;
+    list-style-type: none;
+}
+
+li{
+    padding: 8px;
+}
+
+i{
+    padding-right: 5px;
+}
+
+.i1{
+    color: #00B771;
+}
+
+.i4{
+    color: #00d4c7;
+}
+
+.i3{
+    color: #FF5A00;
+}
+
+.i2{
+    color: #bfdc6e;
+}
+
+.home-hr{
+    margin: 0;
+    border: 2px solid #00B771;
+    width: 88%;
+    display: block;
+    margin: 0 auto;
+}
+
+#btmCreateAcct{
+    display: block;
+    margin: 0 0 0 auto;
+    
+    padding: 12px 15px;
+    border: 2px solid #FF5A00;;
+    background: #FF5A00;;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Olive;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition-duration: .5s;
+}
+
+#btmCreateAcct:hover{
+    display: block;
+    margin: 0 0 0 auto;
+    padding: 12px 15px;
+    border: 2px solid #FF5A00;;
+    background: white;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Olive;
+    color: #FF5A00;;
+    border-radius: 5px;
+    cursor: pointer;
+    transition-duration: .5s;
+}
+
+a{
+    color: white;
+    text-align: center;
+    transition-duration: .5s;
+}
+
+a:hover{
+    color: #FF5A00;;
+    text-align: center;
+    text-decoration: none;
+    transition-duration: .5s;
+}

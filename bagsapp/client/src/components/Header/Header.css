@@ -1,0 +1,93 @@
+@font-face{
+    font-family: 'OliveBold';
+    src: url('../../fonts/AntiqueOliveBold.ttf') format('truetype');
+}
+
+@font-face{
+    font-family: 'Olive';
+    src: url('../../fonts/AntiqueOliveRegular.ttf') format('truetype');
+}
+
+@font-face{
+    font-family: 'Chap';
+    src: url('../../fonts/Chaparral.ttf') format('truetype');
+}
+
+
+
+.header{
+    background-color: #feef44;
+    border: 20px solid #00d4c7;
+    /* background-image: url('../../images/canvasbag.jpg');
+    background-repeat: no-repeat;
+    background-size: cover; */
+    
+    color: black;
+}
+
+#homeHeader{
+    font-family: Olive;
+}
+
+.first{
+    height: auto;
+    padding: 20px;
+    margin: auto;
+    font-family: Chap;
+    font-size: 20px;
+}
+
+.trunk{
+    padding: 20px;
+    margin: auto;
+    
+}
+
+#trunk{
+    border: 1px solid black;
+    width: 100%;
+    height: auto;
+}
+
+
+
+.createAcct{
+    display: block;
+    margin: 0 auto;
+    padding: 12px 15px;
+    border: 2px solid #00d4c7;
+    background: #00d4c7;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Olive;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition-duration: .5s;
+}
+
+.createAcct:hover{
+    display: block;
+    margin: 0 auto;
+    padding: 12px 15px;
+    border: 2px solid #00d4c7;
+    background: white;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Olive;
+    color: #00d4c7;
+    border-radius: 5px;
+    cursor: pointer;
+    transition-duration: .5s;
+}
+
+a{
+    color: white;
+    text-align: center;
+}
+
+a:hover{
+    color: #FF5A00;
+    text-align: center;
+    text-decoration: none;
+}

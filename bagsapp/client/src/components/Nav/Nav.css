@@ -1,0 +1,26 @@
+.navbar-brand{
+    font-family: Olive;
+}
+
+.navtop{
+    height: 50px;
+}
+
+.nav-item {
+    font-family: Chap;
+}
+
+.nav-link, .navbar-brand{
+    color: white !important;
+}
+
+#logout{
+    color: white;
+    display: block;
+    margin: 0 auto;
+}
+
+.navbar{
+    background-color: #170085 !important;
+    height: 100px;
+}

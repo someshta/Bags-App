@@ -1,0 +1,75 @@
+.storeContainer{
+    /* background-color: #f4f3f1; */
+    
+}
+
+.storeRow{
+    border: 2px solid #00B771;
+    padding: 20px;
+    margin: 20px;
+    font-size: 20px;
+    color: #00B771;
+    text-align: center;
+}
+
+.storeInfo{
+    margin: auto;
+}
+
+h3{
+    font-family: olive;
+}
+
+#address{
+    margin-top: 0 !important;
+}
+
+#distance{
+    font-size: 16px;
+    margin: auto;
+}
+
+#saveBtn{
+    display: block;
+    margin: 0 auto;
+    padding: 12px 15px;
+    border: 2px solid #00B771;
+    background: #00B771;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Olive;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition-duration: .5s;
+}
+
+#saveBtn:hover{
+    display: block;
+    margin: 0 auto;
+    padding: 12px 15px;
+    border: 2px solid #00B771;
+    background: white;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Olive;
+    color: #00B771;
+    border-radius: 5px;
+    cursor: pointer;
+    transition-duration: .5s;
+}
+
+#saveBtn:active{
+    display: block;
+    margin: 0 auto;
+    padding: 12px 15px;
+    border: 2px solid #00B771;
+    background: white;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: Olive;
+    color: #00B771;
+    border-radius: 5px;
+    cursor: pointer;
+    transition-duration: .1s;
+}

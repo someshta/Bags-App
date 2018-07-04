@@ -1,0 +1,53 @@
+.signInForm{
+    max-width: 400px;
+    padding: 20px;
+    margin: 10px auto;
+    background-color: #00d4c7;
+}
+
+#signInHeader{
+    text-align: center;
+}
+
+#signInMsg{
+    text-align: center;
+}
+
+
+#signInBtn{
+    display: block;
+    margin: 0 auto;
+    padding: 12px 15px;
+    border: 2px solid #FF5A00;
+    background: #FF5A00;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Olive;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition-duration: .5s;
+}
+
+#signInBtn:hover{
+    display: block;
+    margin: 0 auto;
+    padding: 12px 15px;
+    border: 2px solid #FF5A00;
+    background: white;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Olive;
+    color: #FF5A00;
+    border-radius: 5px;
+    cursor: pointer;
+    transition-duration: .5s;
+}
+
+#dont{
+    color: #FF5A00;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}

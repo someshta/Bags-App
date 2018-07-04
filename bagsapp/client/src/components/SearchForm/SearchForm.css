@@ -1,0 +1,58 @@
+.searchContainer{
+    background-image: url('../../images/groceries.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    max-width: 100%;
+    height: auto; 
+}
+
+#search{
+    display: block;
+    margin: 10px auto;
+    
+    
+}
+
+h1{
+    font-family: olive;
+}
+
+.searchForm{
+    padding: 100px;
+    margin: auto;
+    text-align: center;
+    max-width: 600px;
+    background-color: rgba(13, 14, 19, 0.5);
+    color: white;
+}
+
+#searchBtn{
+    display: block;
+    margin: 0 auto;
+    padding: 12px 15px;
+    border: 2px solid #FF5A00;
+    background: #FF5A00;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Olive;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition-duration: .5s;
+}
+
+#searchBtn:hover{
+    display: block;
+    margin: 0 auto;
+    padding: 12px 15px;
+    border: 2px solid #FF5A00;
+    background: white;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Olive;
+    color: #FF5A00;
+    border-radius: 5px;
+    cursor: pointer;
+    transition-duration: .5s;
+}
