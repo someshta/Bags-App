@@ -73,11 +73,12 @@ class CreateAcct extends React.Component {
     render() {
         return (
             <div className="container-fluid">
-                <div className="row">
-                    <div className="col-sm create">
-                        <h2 id="createHeader"> Create an account</h2>
+                <div className="row sign-in-up-row">
+                {/* <div className="col-sm sign-in-up-color-blck"></div> */}
+                    <div className="col-sm sign-in-up-div" id="sign-up-iso">
+                        <h2 className="sign-in-up-header"> Create an account</h2>
                         <hr />
-                        <h5 id="successMsg">{this.state.successMsg}</h5>
+                        <h5 className="success-msg">{this.state.successMsg}</h5>
                         <form onSubmit={this.handleSubmit}>
                             <div className="form-group">
                                 <label for="exampleInputEmail1">Name</label>
@@ -86,11 +87,11 @@ class CreateAcct extends React.Component {
                             <div className="form-group">
                                 <label for="exampleInputEmail1">Email address</label>
                                 <input type="email" name="email" value={this.state.email} onChange={this.handleChange}className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email"/></div>
-                            <div class="form-group">
+                            <div className="form-group">
                                 <label for="exampleInputPassword1">Password</label>
                                 <input type="password" name="password" value={this.state.password} onChange={this.handleChange}className="form-control" id="exampleInputPassword1" placeholder="Password"/>
                             </div>
-                            <div class="form-group">
+                            <div className="form-group">
                                 <label for="exampleInputPassword1">Confirm password</label>
                                 <input type="password" name="passwordConf" value={this.state.passwordConf} onChange={this.handleChange} className="form-control" id="exampleInputPassword1" placeholder="Confirm password"/>
                             </div>
@@ -98,7 +99,7 @@ class CreateAcct extends React.Component {
                                 <label for="exampleInputEmail1">Phone number</label>
                                 <input type="text" name="phone" value={this.state.phone} onChange={this.handleChange} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Phone number"/>
                             </div>
-                            <input id="createBtn" type="submit" value="Create Account" />
+                            <input className="sign-in-up-btn" type="submit" value="Create Account" />
                             <Link id="already" to="/signin" className={window.location.pathname === "/signin" ? "nav-link" : "nav-link"}>Already have an account? Sign in here.</Link>
                         </form>
                     </div>    

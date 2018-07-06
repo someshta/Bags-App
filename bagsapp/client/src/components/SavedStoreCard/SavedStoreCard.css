@@ -1,23 +1,23 @@
 .savedStoreRow{
-    border: 2px solid #00B771;
+    border: 2px solid black;
     padding: 20px;
     margin: 20px;
     font-size: 20px;
-    color: #00B771;
+    color: black;
     text-align: center;
 }
 
 .savedStoreInfo{
     font-size: 20px;
-    color: #00B771;
+    color: black;
 }
 
 #deleteBtn{
     display: block;
     margin: 0 auto;
     padding: 12px 15px;
-    border: 2px solid #00B771;
-    background: #00B771;
+    border: 2px solid black;
+    background: black;
     font-size: 16px;
     font-weight: bold;
     font-family: Olive;
@@ -31,12 +31,12 @@
     display: block;
     margin: 0 auto;
     padding: 12px 15px;
-    border: 2px solid #00B771;
+    border: 2px solid black;
     background: white;
     font-size: 16px;
     font-weight: bold;
     font-family: Olive;
-    color: #00B771;
+    color: black;
     border-radius: 5px;
     cursor: pointer;
     transition-duration: .5s;
@@ -46,12 +46,12 @@
     display: block;
     margin: 0 auto;
     padding: 12px 15px;
-    border: 2px solid #00B771;
+    border: 2px solid black;
     background: white;
     font-size: 18px;
     font-weight: bold;
     font-family: Olive;
-    color: #00B771;
+    color: black;
     border-radius: 5px;
     cursor: pointer;
     transition-duration: .1s;

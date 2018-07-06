@@ -1,6 +1,6 @@
 import React from "react";
 import Styles from "./SignIn.css";
-import Nav from '../../components/Nav';
+// import Nav from '../../components/Nav';
 import { Link } from "react-router-dom";
 import {BrowserRouter as Router, Route} from "react-router-dom";
 import axios from "axios";
@@ -11,6 +11,7 @@ class SignIn extends React.Component {
         password: '',
         message: ''
     };
+
 
     handleChange = event => {
         this.setState({
@@ -41,6 +42,8 @@ class SignIn extends React.Component {
 
                 // once you know its a valid user
                 localStorage.setItem('userId', user._id);
+                localStorage.setItem('userPhone', user.phone);
+
                 this.props.history.push("/userhome");
             }
             })
@@ -52,23 +55,24 @@ class SignIn extends React.Component {
     render(){
         return(
                 <div className="container-fluid">
-                    <div className="row">
-                        <div className="col-sm">
-                            <div className="signInForm">
-                                <h2 id="signInHeader">Sign in!</h2>
+                    <div className="row sign-in-up-row">
+                    {/* <div className="col-sm sign-in-up-color-blck"></div> */}
+                        <div className="col-sm sign-in-up-col">
+                            <div className="sign-in-up-div">
+                                <h2 className="sign-in-up-header">Sign in!</h2>
                                 <hr/>
-                                <h5 id="signInMsg"> {this.state.message}</h5>
+                                <h5 className="success-msg"> {this.state.message}</h5>
                                 <form onSubmit={this.handleSubmit}>
                                     <div className="form-group">
-                                        <label for="exampleInputEmail1">Email address</label>
+                                        <label htmlFor="exampleInputEmail1">Email address</label>
                                         <input type="email" name="email" value={this.state.email} onChange={this.handleChange}className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email"/>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputPassword1">Password</label>
+                                    <div className="form-group">
+                                        <label htmlFor="exampleInputPassword1">Password</label>
                                         <input type="password" name="password" value={this.state.password} onChange={this.handleChange}className="form-control" id="exampleInputPassword1" placeholder="Password"/>
                                     </div>
-                                    <input id="signInBtn" type="submit" value="Sign In"/><br />
-                                    <Link id="dont" to="/createaccount" className={window.location.pathname === "/createaccount" ? "nav-link" : "nav-link"}>Don't have an account? Create one here.</Link>
+                                    <input className="sign-in-up-btn" type="submit" value="Sign In"/><br />
+                                    <Link to="/createaccount" className={window.location.pathname === "/createaccount" ? "nav-link" : "nav-link"}>Don't have an account? Create one here.</Link>
                                 </form>
                             </div>
                         </div>

@@ -1,9 +1,4 @@
 @font-face{
-    font-family: 'OliveBold';
-    src: url('../../fonts/AntiqueOliveBold.ttf') format('truetype');
-}
-
-@font-face{
     font-family: 'Olive';
     src: url('../../fonts/AntiqueOliveRegular.ttf') format('truetype');
 }
@@ -13,43 +8,40 @@
     src: url('../../fonts/Chaparral.ttf') format('truetype');
 }
 
-
-
-.header{
-    background-color: #feef44;
-    border: 20px solid #00d4c7;
-    /* background-image: url('../../images/canvasbag.jpg');
-    background-repeat: no-repeat;
-    background-size: cover; */
+.header-container{
     
+    
+    /* border: 20px solid #00d4c7; */
     color: black;
+    width: 100%;
 }
 
-#homeHeader{
+#header-headline{
     font-family: Olive;
 }
 
-.first{
+.header-left-col{
+    /* background-color: rgba(0, 0, 0, .1); */
+    width: 100%;
     height: auto;
-    padding: 20px;
-    margin: auto;
+    padding: 40px;
+    margin: 30px auto;
+    /* margin-left: 10px; */
     font-family: Chap;
     font-size: 20px;
 }
 
-.trunk{
-    padding: 20px;
+.header-image-div{
+    /* padding: 20px; */
     margin: auto;
     
 }
 
-#trunk{
+#header-image{
     border: 1px solid black;
     width: 100%;
     height: auto;
 }
-
-
 
 .createAcct{
     display: block;
@@ -79,15 +71,4 @@
     border-radius: 5px;
     cursor: pointer;
     transition-duration: .5s;
-}
-
-a{
-    color: white;
-    text-align: center;
-}
-
-a:hover{
-    color: #FF5A00;
-    text-align: center;
-    text-decoration: none;
 }

@@ -8,7 +8,7 @@ import CreateAcct from './pages/CreateAcct';
 import SignIn from './pages/SignIn';
 import UserHome from './pages/UserHome';
 import MyStores from './pages/MyStores';
-import LoggedInNav from './components/LoggedInNav';
+// import LoggedInNav from './components/LoggedInNav';
 import './App.css';
 
 class App extends Component {

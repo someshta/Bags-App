@@ -1,58 +1,7 @@
-.create{
-    max-width: 400px;
-    padding: 20px;
-    margin: 30px auto;
-    background-color: #bfdc6f;
 
-}
+/* styles for create acct on signin stylesheet */
 
-#createHeader{
-    text-align: center;
-}
-
-#successMsg{
-    text-align: center;
-}
-
-form{
-    font-family: Chap;
-    font-size: 18px;
-}
-
-h5{
-    font-family: Olive;
-}
-
-#createBtn{
-    display: block;
-    margin: 0 auto;
-    padding: 12px 15px;
-    border: 2px solid #FF5A00;
-    background: #FF5A00;
-    font-size: 16px;
-    font-weight: bold;
-    font-family: Olive;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-    transition-duration: .5s;
-}
-
-#createBtn:hover{
-    display: block;
-    margin: 0 auto;
-    padding: 12px 15px;
-    border: 2px solid #FF5A00;
-    background: white;
-    font-size: 16px;
-    font-weight: bold;
-    font-family: Olive;
-    color: #FF5A00;
-    border-radius: 5px;
-    cursor: pointer;
-    transition-duration: .5s;
-}
-
-#already{
-    color: #FF5A00;
-}
+/* #sign-up-iso{
+    margin-top: 5%;
+    margin-bottom: 15%;
+} */

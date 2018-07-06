@@ -1,28 +1,66 @@
-.App {
+h2{
+  
+}
+
+p{
+  font-family: Chap;
+  font-size: 20px;
+  margin-bottom: 0;
+}
+
+ul{
+  font-family: chap;
+  font-size: 22px;
+  list-style-type: none;
+  padding: 0 !important;
+  text-align: left;
+  margin: 20px;
+}
+
+li{
+  padding: 8px;
+}
+.container-fluid{
+  /* padding: 5px//; */
+}
+
+i{
+  padding-right: 5px;
+}
+
+a{
+  color: white;
+  text-align: center;
+  transition-duration: .5s;
+}
+
+a:hover{
+  color: #FF5A00;;
+  text-align: center;
+  text-decoration: none;
+  transition-duration: .5s;
+}
+
+h5{
+  font-family: Olive;
+}
+
+h3{
+  font-family: olive;
+}
+
+h2{
+  padding-top: 20px; 
+  font-family: Olive;
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+h1{
+  font-family: olive;
+  padding: 10px;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+form{
+  font-family: Chap;
+  font-size: 18px;
 }

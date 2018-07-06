@@ -52,7 +52,7 @@ class MyStores extends React.Component{
         return(
         <div>
             <div>
-                <h1>My Stores</h1>
+                <h2>My Stores</h2>
             </div>
             <SavedStoreCard saved={this.state.saved} deletestore={this.deleteStore} />
         </div>

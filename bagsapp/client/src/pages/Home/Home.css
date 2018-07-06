@@ -1,8 +1,8 @@
 .container-fluid{
-    background-color: white;
+    background-color: #fafafa;
 }
 
-#reminder{
+#reminder, #save{
     display: block;
     margin: 0 auto;
     max-width: 300px;
@@ -10,61 +10,62 @@
     height: auto;
 }
 
-
-
-.grey{
-    background-color: white;
+.home-page-row{
+    background-color: #fafafa;
     padding: 50px;
     margin: auto;
 }
 
-p{
-    font-family: Chap;
-    font-size: 20px;
+.home-how-it-works-title{
+    text-align: center;
 }
 
-h2{
-    font-family: Olive;
+.step-img{
+    max-height: 242px;;
+    width: auto;
+}
+
+#heart-pin{
+    max-height: 242px;
+    width: auto;
+}
+
+.how-it-works-step{
+    text-align: center;
 }
 
 .hesitate{
     text-align: right;
 }
 
-#save {
-    display: block;
-    margin: 0 auto;
-    max-width: 300px;
-    width: 100%;
-    height: auto;
+.bagman-container{
+    max-height: 400px;
 }
 
-.facts{
-    background-color: #FF5A00;
-    max-width: 55%;
+#bagman{
+    max-height: 90%;
+    width: auto;
+    display: block;
     margin: auto;
 }
 
-#facts{
+#facts-title{
+    font-family: Chap;
     text-align: center;
-    font-family: Olive;
-    font-size: 25px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.app-purpose-div{
+    text-align: center;
+    color: #FF5A00;
+    font-family: Chap;
     display: block;
-    margin: 50px auto;
+    margin: 30px auto;
 }
 
-ul{
-    font-family: chap;
-    font-size: 22px;
-    list-style-type: none;
-}
-
-li{
-    padding: 8px;
-}
-
-i{
-    padding-right: 5px;
+#app-purpose{
+    font-size: 40px;
 }
 
 .i1{
@@ -94,7 +95,6 @@ i{
 #btmCreateAcct{
     display: block;
     margin: 0 0 0 auto;
-    
     padding: 12px 15px;
     border: 2px solid #FF5A00;;
     background: #FF5A00;;
@@ -119,18 +119,5 @@ i{
     color: #FF5A00;;
     border-radius: 5px;
     cursor: pointer;
-    transition-duration: .5s;
-}
-
-a{
-    color: white;
-    text-align: center;
-    transition-duration: .5s;
-}
-
-a:hover{
-    color: #FF5A00;;
-    text-align: center;
-    text-decoration: none;
     transition-duration: .5s;
 }

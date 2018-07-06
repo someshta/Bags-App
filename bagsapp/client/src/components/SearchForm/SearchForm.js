@@ -8,7 +8,7 @@ const SearchForm = props => {
             <div className="form-group searchForm">
                 <h1>Search</h1>
                 <input type="text" name="search" id="search" className="form-control" placeholder="Search by store name, city or zip code" value={props.value} onChange={props.onChange}/>
-                <input id="searchBtn" type="submit" onClick={props.onClick}/>                           
+                <input id="searchBtn" type="submit" value="Search"onClick={props.onClick}/>                           
             </div>
         </form>
         </div>

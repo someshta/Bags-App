@@ -13,7 +13,7 @@ const Nav = () => {
   if (user) {
     return(
       <div>
-      <div className="navbar navbar-expand-lg navtop"></div>
+      {/* <div className="navbar navbar-expand-lg navtop"></div> */}
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <Link to="/userhome" className={window.location.pathname === "/userhome" ? "navbar-brand" : "navbar-brand"}>BAGS</Link>
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

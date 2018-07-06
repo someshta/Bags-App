@@ -3,7 +3,9 @@ const Router = express.Router();
 const controller = require("../controller");
 const db = require("../models");
 const axios = require("axios");
-
+const accountSid = 'AC9d11bb0f67906143f66daaee512bc036';
+const authToken = '15d87cef2a383c7b4fb4ac4944925b53';
+const client = require('twilio')(accountSid, authToken);
 
 //checking if user is logged in
 const isUserLoggedIn = req => {
@@ -66,6 +68,22 @@ Router.post('/login', function(req, res){
         }
     })
 });
+
+//route to send SMS
+
+// Router.post('/sendsms', function(req, res){
+//     controller.sendSMS(req.body.body, req.body.from, req.body.to)
+//     })
+
+Router.post('/sendsms', function(req,res){
+    client.messages
+    .create({
+        body: req.body.body,
+        from: "+19162498645",
+        to: req.body.to
+    })
+})
+
 
 //route to save store to user id
 // Router.post('/stores/:userId', verifyLogIn, function(req, res) { // TOTALLY USE THIS!!!!
@@ -151,6 +169,8 @@ Router.get('/getstores/:lat/:lng/:query',  function(req, res) {
 
     
 })
+
+
 
 //exporting Router, being used in the app.use in server.js
 module.exports = Router;

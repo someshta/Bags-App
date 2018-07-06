@@ -1,20 +1,39 @@
-.signInForm{
+.sign-in-up-row{
+    background-color: #FAFAFA;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.sign-in-up-col{
+    padding: 30;
+    margin: auto;
+    max-height: 800px;
+}
+
+.sign-in-up-div{
     max-width: 400px;
+    /* padding: 20px;
+    margin-top: 20%;
+    margin-bottom: 20%; */
+    background-color: inherit;
+    /* max-width: 400px; */
     padding: 20px;
-    margin: 10px auto;
-    background-color: #00d4c7;
+    margin: auto;
+    
+    /* margin: 30px auto; */
 }
 
-#signInHeader{
+.sign-in-up-header{
     text-align: center;
 }
 
-#signInMsg{
+.success-msg{
     text-align: center;
 }
 
-
-#signInBtn{
+.sign-in-up-btn{
     display: block;
     margin: 0 auto;
     padding: 12px 15px;
@@ -29,7 +48,7 @@
     transition-duration: .5s;
 }
 
-#signInBtn:hover{
+.sign-in-up-btn:hover{
     display: block;
     margin: 0 auto;
     padding: 12px 15px;
@@ -44,10 +63,23 @@
     transition-duration: .5s;
 }
 
-#dont{
-    color: #FF5A00;
-}
-
 input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
+@media only screen and (min-width: 768px) {
+    /* For mobile phones: */
+    
+
+    .sign-in-up-color-blck{
+        background-color: aliceblue;
+        height: 800px;
+        max-height: 800px;
+    }
+}
+
+@media only screen and (min-width: 768px){
+
+    
+
 }

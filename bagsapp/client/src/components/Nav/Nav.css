@@ -11,16 +11,16 @@
 }
 
 .nav-link, .navbar-brand{
-    color: white !important;
+    color: black;
 }
 
 #logout{
-    color: white;
+    color: black;
     display: block;
     margin: 0 auto;
 }
 
 .navbar{
-    background-color: #170085 !important;
-    height: 100px;
+    background-color: rgb(250, 250, 250)!important;
+    height: 75px;
 }
