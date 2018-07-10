@@ -180,7 +180,7 @@ class UserHome extends React.Component {
             let distBetween = this.distance(userLat, userLng, storeLat, storeLng);
             // console.log(distBetween);
 
-            if(distBetween < 1.5) {
+            if(distBetween < .11) {
                 // this.sendReminder(name, userId, googleId);
                 this.checkLastReminder(name, userId, googleId)
             }
