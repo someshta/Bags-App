@@ -85,3 +85,7 @@
 .fa-heart{
     color: #0097e3;
 }
+
+.alreadySavedHeart{
+    color: red;
+}

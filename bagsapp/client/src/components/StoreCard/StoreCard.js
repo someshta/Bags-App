@@ -49,7 +49,7 @@ class StoreCard extends React.Component {
                                 <p>{this.props.data.dist} miles</p>
                             </div>
                             <div className="col-sm already-saved-info">
-                                <i className="fas fa-heart fa-lg"></i> 
+                                <i className="fas fa-heart fa-lg alreadySavedHeart"></i> 
                             </div>
                         </div>
                 }

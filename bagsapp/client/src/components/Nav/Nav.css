@@ -4,10 +4,16 @@
 
 .nav-item {
     font-family: Neoteric;
+    font-weight: bold;
 }
 
 .nav-link, .navbar-brand{
     color: black;
+    font-weight: bold;
+}
+
+.navbar-brand{
+    font-size: 30px;
 }
 
 #logout{

@@ -26,7 +26,7 @@ const Home = () => {
                 <div className="col-sm how-it-works-step">
                     <img className="step-img" id="heart-pin" src={require("../../images/heartpin.svg")} alt="stepimg" />
                     <h3 className="home-how-it-works-text">Save the stores you frequent most</h3>
-                    <p className="home-how-it-works-text">Search for your favorite grocery stores and save them to your favorites.</p>
+                    <p className="home-how-it-works-text">Search for grocery stores and save your favorites.</p>
                 </div>
                 <div className="col-sm how-it-works-step">
                     <img className="step-img" src={require("../../images/newtext.png")} alt="stepimg" />
