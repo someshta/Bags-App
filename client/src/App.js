@@ -26,7 +26,7 @@ class App extends Component {
           <Route exact path="/mystores" component={MyStores} />
           <Route exact path="/signin" component={SignIn} />
           <Route exact path="/createaccount" component={CreateAcct} />
-          <Route path='*' component={HomeComponent}/>
+          <Route exact path='*' component={HomeComponent}/>
           </div>
           </Router>
     );
