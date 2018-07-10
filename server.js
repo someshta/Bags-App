@@ -22,8 +22,6 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("public"));
 }
 
-console.log("google places", process.env.GOOGLE_PLACES_API_KEY)
-
 app.use(session({
   secret: 'work hard',
   resave: true,

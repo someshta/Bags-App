@@ -55,7 +55,7 @@ class UserHome extends React.Component {
         })
     };
 
-        //setting users location with lat & lng, then making API call to google places
+        //setting users location with lat & lng, then making API call
     handleSuccess  = position => {
         console.log(position)
         this.setState({
