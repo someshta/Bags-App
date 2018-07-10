@@ -33,7 +33,7 @@ class StoreCard extends React.Component {
                             <p>{this.props.data.dist} miles</p>
                         </div>
                         <div className="col-sm storeInfo">
-                            <button id="saveBtn" type="button" onClick={() => this.props.savestore(this.props.data.name, this.props.data.vicinity, this.props.data.geometry.location.lat, this.props.data.geometry.location.lng, this.props.data.id)}>Save</button> 
+                            <button id="saveBtn" type="button" onClick={() => this.props.savestore(this.props.data.name, this.props.data.vicinity, this.props.data.geometry.location.lat, this.props.data.geometry.location.lng, this.props.data.id)}><i className="fas fa-heart fa-lg"></i> </button> 
                         </div>
                     </div>   
                     

@@ -59,20 +59,20 @@ class SignIn extends React.Component {
                     {/* <div className="col-sm sign-in-up-color-blck"></div> */}
                         <div className="col-sm sign-in-up-col">
                             <div className="sign-in-up-div">
-                                <h2 className="sign-in-up-header">Sign in!</h2>
+                                <h2 className="sign-in-up-header">Sign in</h2>
                                 <hr/>
-                                <h5 className="success-msg"> {this.state.message}</h5>
+                                <h5 className="success-msg" > {this.state.message}</h5>
                                 <form onSubmit={this.handleSubmit}>
                                     <div className="form-group">
                                         <label htmlFor="exampleInputEmail1">Email address</label>
-                                        <input type="email" name="email" value={this.state.email} onChange={this.handleChange}className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email"/>
+                                        <input autoComplete="new-email" type="email" name="email" value={this.state.email} onChange={this.handleChange}className="form-control" id="exampleInputEmail1" maxLength="50" aria-describedby="emailHelp" placeholder="Email"/>
                                     </div>
                                     <div className="form-group">
                                         <label htmlFor="exampleInputPassword1">Password</label>
-                                        <input type="password" name="password" value={this.state.password} onChange={this.handleChange}className="form-control" id="exampleInputPassword1" placeholder="Password"/>
+                                        <input autoComplete="new-password" type="password" name="password" value={this.state.password} maxLength="20" onChange={this.handleChange}className="form-control" id="exampleInputPassword1" placeholder="Password"/>
                                     </div>
-                                    <input className="sign-in-up-btn" type="submit" value="Sign In"/><br />
-                                    <Link to="/createaccount" className={window.location.pathname === "/createaccount" ? "nav-link" : "nav-link"}>Don't have an account? Create one here.</Link>
+                                    <input className="sign-in-up-btn" type="submit" value="Sign In"/>
+                                    <Link id="create-link" to="/createaccount" className={window.location.pathname === "/createaccount" ? "nav-link" : "nav-link"}>Don't have an account? Create one here.</Link>
                                 </form>
                             </div>
                         </div>

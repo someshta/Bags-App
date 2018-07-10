@@ -9,14 +9,11 @@ const SavedStoreCard = props => {
         <div className="container">
             {props.saved.map(store => (
                 <div className="row savedStoreRow" >
-                    <div className="col-sm savedStoreInfo">
+                    <div className="col-sm already-saved-info">
                         <h3>{store.name}</h3>
                     </div>
-                    <div className="col-sm">
+                    <div className="col-sm already-saved-info">
                         <p>{store.address}</p>
-                    </div>
-                    <div className="col-sm">
-                        <p>{store.dist} miles</p>
                     </div>
                     <div className="col-sm">
                         <button id="deleteBtn" key={store._id} type="button" onClick={() => props.deletestore(store._id)}>Delete</button>  

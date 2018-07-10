@@ -6,10 +6,7 @@ import geoDist from "geodist";
 import axios from "axios";
 import StoreCard from '../../components/StoreCard';
 import SearchHeader from '../../components/SearchHeader';
-// const accountSid = 'AC9d11bb0f67906143f66daaee512bc036';
-// const authToken = '15d87cef2a383c7b4fb4ac4944925b53';
-// const client = require('twilio')(accountSid, authToken);
-// import SaveBtn from '../../components/SaveBtn';
+import SavedStoreCard from "../../components/SavedStoreCard";
 
 
 class UserHome extends React.Component {
@@ -20,148 +17,59 @@ class UserHome extends React.Component {
         results: [],
         currentLat: '',
         currentLng: '',
-        lastKnownLat: '38.745793',
-        lastKnownLng: '-121.256906',
         saved: {},
         savedLocations: []
     };
 
     //triggering watchID and getting users saved stores when page loads
     componentDidMount(){
-        
-        // if(this.distance(this.state.currentLat, this.state.currentLng, this.state.lastKnownLat, this.state.lastKnownLng) > 5){
         this.watchID = navigator.geolocation.watchPosition(this.handleSuccess, function(error){
             console.log(error);
         })
-    // );
-    // }else{
-        // this.reSortStores;
-    // }
         this.getUsersStores();
-        // this.checkLocation(this.state.currentLat, this.state.currentLng, this.state.lastKnownLat, this.state.lastKnownLng);
+        
     }
 
 
-    sendReminder = () =>{
-        const userPhone = localStorage.getItem('userPhone');
-        const reminder = {
-            body: "Yo yo yo",
-            to: "+1" + userPhone
-        }
-
-        axios.post('/sendsms', reminder)
-        .then(response => console.log("text sent"))
+    componentDidUpdate(){
+        this.compareUserLocWithStoreLoc();
     }
 
-
-    //ONLY MAKE API CALL IF USER LOCATION HAS CHANGED BY A GREAT DISTANCE
-    //if currentLat & currentLng > lastKnownLat & lastKnownLng by 5 miles, make API call
-    //set lastKnownLat & Lng to coordinates of currentLat & Lng
-    //else...
-    //map through results index, use currentLat & Lng to compare with distance
-    //re sort array based on distance
-    //set state to newly arranged array
-    checkLocation = (currentLat, currentLng, lastLat, lastLng) => {
-        let distFromLast = this.distance(currentLat, currentLng, lastLat, lastLng)
-        console.log(distFromLast);
-        
-        if (distFromLast > 5){
-            console.log("you've moved 5+ miles");
-            this.setState({
-                lastKnownLat: this.state.currentLat,
-                lastKnownLng: this.state.currentLng
-            })
-            
-            // this.sendReminder();
-            console.log("new state lat, lng", this.state.lastKnownLat, this.state.lastKnownLng);
-            this.makeApiCall(this.state.currentLat, this.state.currentLng, "grocery store " + this.state.search);
-        }else{
-            this.setState({
-                lastKnownLat: this.state.currentLat,
-                lastKnownLng: this.state.currentLng
-                
-            })
-            this.reSortStores();
-        }
+        //clears watchID when user leaves page
+    componentWillUnmount(){
+        navigator.geolocation.clearWatch(this.watchID)
+        document.body.style.backgroundColor = null;
     }
 
-    reSortStores = () => {
-        const resultsCopy = this.state.results.map(array => ({...array}));
-        
-        resultsCopy.map(store => {
-            store.dist = this.distance(this.state.currentLat, this.state.currentLng, store.geometry.location.lat, store.geometry.location.lng)})
-        
-            resultsCopy.sort(((store1, store2) => {
-                return store1.dist - store2.dist
-            }));
-            this.setState({
-                results: resultsCopy,
-                headline: "Testing state"
+    //handling input forms
+    handleChange = event => {
+        this.setState({ [event.target.name]: event.target.value  }); 
+    };
 
-            })
-            console.log("sorted", this.state.results);
-    }
-    
-    compareUserLocWithStoreLoc = () =>{
-        let mi = mi;
-        let userLat = this.state.currentLat;
-        let userLng = this.state.currentLng;
-        let storeLat = '';
-        let storeLng = '';
-        
-        this.state.savedLocations.forEach(location => {
-            storeLat = location[0].lat;
-            storeLng = location[0].lng;
-            let distBetween = this.distance(userLat, userLng, storeLat, storeLng);
-            console.log(distBetween);
+        //handling users search
+    handleSubmit = event => {
+        event.preventDefault();
+        this.makeApiCall(this.state.currentLat, this.state.currentLng, "grocery store " + this.state.search);
+        this.setState({
+            headline: `Results for "${this.state.search}"`
         })
-    }
+    };
 
-    //setting users location with lat & lng, then making API call to google places
+        //setting users location with lat & lng, then making API call to google places
     handleSuccess  = position => {
         console.log(position)
         this.setState({
             currentLat: position.coords.latitude,
             currentLng: position.coords.longitude
         })
-        // this.makeApiCall(this.state.currentLat, this.state.currentLng, "grocery store " + this.state.search);
-        this.checkLocation(this.state.currentLat, this.state.currentLng, this.state.lastKnownLat, this.state.lastKnownLng);
-    }
-
-    //clears watchID when user leaves page
-    componentWillUnmount(){
-        navigator.geolocation.clearWatch(this.watchID)
-        document.body.style.backgroundColor = null;
-    }
-
-    //call to db to get users saved stores
-    getUsersStores = () => {
-        const user = localStorage.getItem('userId');
-
-        axios.get(`/stores/${user}`)
-        .then(response => {
-            const mySaved = {};
-            const myLoc = [];
-            const stores = response.data[0].stores;
-            // console.log("stores data", stores);
-            stores.map(store => mySaved[store.googleId] = true)
-            stores.map(loc => myLoc.push([{name: loc.name, lat: loc.location[0], lng: loc.location[1]}]));
-            this.setState({
-                saved: mySaved,
-                savedLocations: myLoc
-            })
-            console.log(this.state.savedLocations);
-            this.compareUserLocWithStoreLoc();
-        }).catch(err => {
-            console.log(err)
-        })
-
-        
+        // console.log("location has been set", this.state.currentLat);
+        this.makeApiCall(this.state.currentLat, this.state.currentLng, "grocery store " + this.state.search);
+        // this.checkLocation(this.state.currentLat, this.state.currentLng, this.state.lastKnownLat, this.state.lastKnownLng);
     }
 
     //makes query and sets state to results
     makeApiCall = (lat, lng, query) => {
-        
+    
         axios.get(`/getstores/${lat}/${lng}/${query}`).then(res => {
             //save results in variable
             var stores = res.data.results;
@@ -194,15 +102,6 @@ class UserHome extends React.Component {
         })
         
     }
-
-    //handling users search
-    handleSubmit = event => {
-        event.preventDefault();
-        this.makeApiCall(this.state.currentLat, this.state.currentLng, "grocery store " + this.state.search);
-        this.setState({
-            headline: "Results for " + this.state.search
-        })
-    };
 
     //function to calculate distance between two points with latitude & longitude
     distance = (lat1, lon1, lat2, lon2, unit) => {
@@ -238,12 +137,116 @@ class UserHome extends React.Component {
         })
     }
 
-    //handling input forms
-    handleChange = event => {
-        this.setState({ [event.target.name]: event.target.value  }); 
-    };
+    //call to db to get users saved stores
+    getUsersStores = () => {
+        const user = localStorage.getItem('userId');
+
+        axios.get(`/stores/${user}`)
+        .then(response => {
+            const mySaved = {};
+            const myLoc = [];
+            const stores = response.data[0].stores;
+            console.log("users stores", stores);
+            stores.map(store => mySaved[store.googleId] = true)
+            stores.map(loc => myLoc.push([{name: loc.name, lat: loc.location[0], lng: loc.location[1], googleId: loc.googleId, userId: user}]));
+            this.setState({
+                saved: mySaved,
+                savedLocations: myLoc
+            })
+            console.log(this.state.savedLocations);
+            // this.compareUserLocWithStoreLoc();
+        }).catch(err => {
+            console.log(err)
+        })
+
+        
+    }
+
+    //check if user is within distance of saved store
+    compareUserLocWithStoreLoc = () =>{
+        let mi = mi;
+        let userLat = this.state.currentLat;
+        let userLng = this.state.currentLng;
+        let storeLat = '';
+        let storeLng = '';
+        
+        this.state.savedLocations.forEach(location => {
+            storeLat = location[0].lat;
+            storeLng = location[0].lng;
+            let name = location[0].name;
+            let userId = location[0].userId;
+            let googleId = location[0].googleId;
+            
+            let distBetween = this.distance(userLat, userLng, storeLat, storeLng);
+            // console.log(distBetween);
+
+            if(distBetween < 1.5) {
+                // this.sendReminder(name, userId, googleId);
+                this.checkLastReminder(name, userId, googleId)
+            }
+        })
+    }
+
+    //send user reminder message
+    sendReminder = (storeName, userId, googleId) =>{
+
+        const userPhone = localStorage.getItem('userPhone');
+        const reminder = {
+            body: `Are you at ${storeName}? Don't forget your bags!`,
+            to: "+1" + userPhone,
+            storeId: googleId,
+            userId: userId,
+            storeName: storeName
+        }
+
+        axios.post('/reminder', reminder)
+        .then(response => {
+            console.log("/reminder", response)
+        });
+    }
+
+    //check when the last reminder was sent, as not to send too many
+    checkLastReminder = (storeName, user, store) => {
+        const userInfo = {
+            userId: user,
+            storeId: store,
+            storeName: storeName
+        }
+
+        axios.post('/checktime', userInfo)
+        .then(response => {
+            console.log("checktime response", response);
+            // maybe we've never sent a reminder for this store to this user => response.data.length === 0 => send a reminder
+            if(!response.data.length) {
+                console.log("never sent text, sending one now");
+                return this.sendReminder(storeName, user, store)
+            }
+            
+            // maybe we've sent a reminder for this store to this user before => check when the last reminder was sent
+            // if it's been long enough, send a new one
+            var timeBetween = this.convertTimestamp(response.data[0].time, Date.now());
+            
+            //if last reminder was sent more than two hours ago...okay to send a new one
+            if (timeBetween > 7200000) {
+                this.sendReminder(storeName, user, store);
+                console.log("time between", timeBetween);
+            }else {
+                console.log("too soon to text");
+            }
+        })
+    }
+
+    //converts reminder timestamp into miliseconds
+    convertTimestamp = (lastTime, currentTime) => {
+        var last = new Date(lastTime);
+        var current = new Date(currentTime);
+
+        return current - last
+    }
+    
 
     render() {
+        
         return(
             <div className="user-home-body"> 
                 <SearchForm
@@ -257,6 +260,7 @@ class UserHome extends React.Component {
                     <StoreCard key={result.id} data={result} savestore={this.handleSaveStore} ></StoreCard>
                     </div>
                 ))}
+                
             </div>
         );  
     }  

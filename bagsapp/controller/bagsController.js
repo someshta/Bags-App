@@ -23,6 +23,7 @@ module.exports = {
             .findByIdAndUpdate(userId, { $push: {stores: newStore._id }}, cb)
         })
     },
+
     //find all saved stores of user
     findAllStores: function(userId, cb){
         db.User
@@ -32,6 +33,7 @@ module.exports = {
             cb(err, allStores)
         })
     },
+
     //delete store from user
     deleteStore: function(userId, storeId, cb) {
         db.Store.remove({_id: storeId}, (err) =>{
@@ -43,6 +45,22 @@ module.exports = {
             })
         })
         
+    },
+
+    //save reminder
+    saveReminder: function(reminder, cb) {
+        db.Reminder
+    .update(
+        { $and: [{userId: reminder.userId}, {storeId: reminder.storeId}]},
+        {$set:{time: new Date()}},
+        {upsert: true, new: true},
+        ((err, newReminder) => cb(err, newReminder)))
+},
+
+    //check reminder timestamp
+    checkReminderTimestamp: function(userId, storeId, cb) {
+        db.Reminder
+        .find({ $and: [{userId: userId}, {storeId:storeId}]}).then(reminder => cb(null, reminder))
     }
 
 }

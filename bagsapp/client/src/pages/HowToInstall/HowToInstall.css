@@ -1,0 +1,25 @@
+.i1{
+    color: #0097e3;
+    padding-right: 5px;
+}
+
+.i2{
+    color: #00c0bd;
+    padding-right: 5px;
+}
+
+.i3{
+    color: #25d173;
+    padding-right: 5px;
+}
+
+.i4{
+    color: #a1e035;
+    padding-right: 5px;
+}
+
+#install-title, .install{
+    text-align: center !important;
+    padding-top: 20px;
+    margin: auto;
+}

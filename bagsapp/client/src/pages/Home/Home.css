@@ -56,9 +56,22 @@
     font-weight: bold;
 }
 
+.facts-list{
+    font-family: chap;
+    font-size: 22px;
+    list-style-type: none;
+    padding: 0 !important;
+    text-align: left;
+    margin: 40px;
+  }
+  
+  .facts-list-item{
+    padding: 8px;
+  }
+
 .app-purpose-div{
     text-align: center;
-    color: #FF5A00;
+    color: #0097e3;
     font-family: Chap;
     display: block;
     margin: 30px auto;
@@ -66,22 +79,6 @@
 
 #app-purpose{
     font-size: 40px;
-}
-
-.i1{
-    color: #00B771;
-}
-
-.i4{
-    color: #00d4c7;
-}
-
-.i3{
-    color: #FF5A00;
-}
-
-.i2{
-    color: #bfdc6e;
 }
 
 .home-hr{
@@ -92,32 +89,18 @@
     margin: 0 auto;
 }
 
-#btmCreateAcct{
-    display: block;
-    margin: 0 0 0 auto;
-    padding: 12px 15px;
-    border: 2px solid #FF5A00;;
-    background: #FF5A00;;
-    font-size: 16px;
-    font-weight: bold;
-    font-family: Olive;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-    transition-duration: .5s;
+.home-how-it-works-text{
+    max-width: 65%;
+    height: auto;
+    margin: auto;
+    align: center;
+    padding: 5px;
 }
 
-#btmCreateAcct:hover{
-    display: block;
-    margin: 0 0 0 auto;
-    padding: 12px 15px;
-    border: 2px solid #FF5A00;;
-    background: white;
-    font-size: 16px;
-    font-weight: bold;
-    font-family: Olive;
-    color: #FF5A00;;
-    border-radius: 5px;
-    cursor: pointer;
-    transition-duration: .5s;
+.link-to-create{
+    color: #0097e3;
 }
+.link-to-create:hover{
+    color: #0097e3;
+}
+

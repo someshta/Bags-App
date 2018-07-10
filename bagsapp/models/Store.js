@@ -8,7 +8,7 @@ const StoreSchema = new Schema({
         type: [Number],
         index: "2d"
     },
-    googleId: {type: String, unique: true}
+    googleId: {type: String, unique: false}
     // distance: {type: String, required: true}
 });
 

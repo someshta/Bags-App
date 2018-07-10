@@ -31,37 +31,35 @@
 
 .success-msg{
     text-align: center;
+    color: red;
 }
 
 .sign-in-up-btn{
     display: block;
     margin: 0 auto;
     padding: 12px 15px;
-    border: 2px solid #FF5A00;
-    background: #FF5A00;
+    border: 2px solid #00c0bd;
+    background: #00c0bd;
     font-size: 16px;
     font-weight: bold;
-    font-family: Olive;
+    font-family: Neoteric;
     color: white;
-    border-radius: 5px;
+    border-radius: 2px;
     cursor: pointer;
     transition-duration: .5s;
 }
 
-.sign-in-up-btn:hover{
-    display: block;
-    margin: 0 auto;
-    padding: 12px 15px;
-    border: 2px solid #FF5A00;
-    background: white;
-    font-size: 16px;
-    font-weight: bold;
-    font-family: Olive;
-    color: #FF5A00;
-    border-radius: 5px;
-    cursor: pointer;
-    transition-duration: .5s;
+
+#already, #create-link{
+    color: black;
+    text-decoration: none;
 }
+
+#already:hover, #create-link:hover{
+    color: black;
+    text-decoration: none;
+}
+
 
 input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0px 1000px white inset;
@@ -76,10 +74,4 @@ input:-webkit-autofill {
         height: 800px;
         max-height: 800px;
     }
-}
-
-@media only screen and (min-width: 768px){
-
-    
-
 }

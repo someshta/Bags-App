@@ -8,24 +8,13 @@ p{
   margin-bottom: 0;
 }
 
-ul{
-  font-family: chap;
-  font-size: 22px;
-  list-style-type: none;
-  padding: 0 !important;
-  text-align: left;
-  margin: 20px;
-}
-
-li{
-  padding: 8px;
-}
+/*  */
 .container-fluid{
   /* padding: 5px//; */
 }
 
 i{
-  padding-right: 5px;
+  /* padding-right: 5px; */
 }
 
 a{
@@ -35,28 +24,29 @@ a{
 }
 
 a:hover{
-  color: #FF5A00;;
+  color: white;;
   text-align: center;
   text-decoration: none;
   transition-duration: .5s;
-}
+} 
 
 h5{
-  font-family: Olive;
+  font-family: Neoteric;
 }
 
 h3{
-  font-family: olive;
+  font-family: Neoteric;
+  color: #FF5A00;
 }
 
 h2{
   padding-top: 20px; 
-  font-family: Olive;
+  font-family: Neoteric;
   text-align: center;
 }
 
 h1{
-  font-family: olive;
+  font-family: Neoteric;
   padding: 10px;
 }
 

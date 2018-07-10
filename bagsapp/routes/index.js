@@ -1,11 +1,15 @@
+require('dotenv').config({path: '../.env'});
 const express = require("express");
 const Router = express.Router();
 const controller = require("../controller");
 const db = require("../models");
 const axios = require("axios");
-const accountSid = 'AC9d11bb0f67906143f66daaee512bc036';
-const authToken = '15d87cef2a383c7b4fb4ac4944925b53';
+// const accountSid = process.env.TWILIO_ACCT_SID;
+const accountSid = "AC9d11bb0f67906143f66daaee512bc036";
+// const authToken = process.env.TWILIO_TOKEN;
+const authToken = "15d87cef2a383c7b4fb4ac4944925b53";
 const client = require('twilio')(accountSid, authToken);
+
 
 //checking if user is logged in
 const isUserLoggedIn = req => {
@@ -69,25 +73,48 @@ Router.post('/login', function(req, res){
     })
 });
 
-//route to send SMS
+//getting latest reminder time stamp
+Router.post('/checktime', function(req, res){
+    var user = req.body.userId;
+    var store = req.body.storeId;
 
-// Router.post('/sendsms', function(req, res){
-//     controller.sendSMS(req.body.body, req.body.from, req.body.to)
-//     })
-
-Router.post('/sendsms', function(req,res){
-    client.messages
-    .create({
-        body: req.body.body,
-        from: "+19162498645",
-        to: req.body.to
+    controller.checkReminderTimestamp(user, store, (err, info) => {
+        if(err){
+            console.log(err)
+            res.status(500).send()
+        }else{
+            res.json(info)
+        }
     })
 })
 
+//creates reminder & sends sms to user
+Router.post('/reminder', function(req, res) {
+
+    var reminder = {
+        storeId: req.body.storeId,
+        userId: req.body.userId,
+        storeName: req.body.storeName
+    };
+    controller.saveReminder(reminder, (err, newReminder) => {
+        if(err){
+            console.log(err);
+            res.status(500).send();
+        }else{
+
+            client.messages
+            .create({
+                body: req.body.body,
+                from: "+19162498645",
+                to: req.body.to
+            })
+            res.json(newReminder);
+        }
+    })
+})
 
 //route to save store to user id
-// Router.post('/stores/:userId', verifyLogIn, function(req, res) { // TOTALLY USE THIS!!!!
-    Router.post('/stores/:userId', verifyLogIn, function(req, res) {
+Router.post('/stores/:userId', verifyLogIn, function(req, res) {
 
     // The body is coming in as lat, lng
     // Change it to location: [lat, lng]
@@ -159,17 +186,15 @@ Router.get('/logout/:userId', function(req, res) {
     }
 })
 
+//API call
 Router.get('/getstores/:lat/:lng/:query',  function(req, res) {
-    const URL = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${req.params.lat},${req.params.lng}&radius=32000&&keyword=${req.params.query}&key=AIzaSyBeI6jvr9yGuaAlEzRvlmMEFR6iU0-vOpg`;
+    const URL = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${req.params.lat},${req.params.lng}&radius=32000&&keyword=${req.params.query}&key=${process.env.GOOGLE_PLACES_API_KEY}`;
     axios.get(URL).then(result => {
         res.send(result.data)
     }).catch(err =>{
         console.log(err);
-    })
-
-    
+    })    
 })
-
 
 
 //exporting Router, being used in the app.use in server.js

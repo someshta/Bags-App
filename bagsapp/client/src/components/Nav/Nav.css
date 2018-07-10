@@ -1,13 +1,9 @@
 .navbar-brand{
-    font-family: Olive;
-}
-
-.navtop{
-    height: 50px;
+    font-family: Neoteric;
 }
 
 .nav-item {
-    font-family: Chap;
+    font-family: Neoteric;
 }
 
 .nav-link, .navbar-brand{
@@ -22,5 +18,4 @@
 
 .navbar{
     background-color: rgb(250, 250, 250)!important;
-    height: 75px;
 }

@@ -1,4 +1,9 @@
 @font-face{
+    font-family: 'Clemente';
+    src: url('../../fonts/Clemente.ttf') format('truetype');
+}
+
+@font-face{
     font-family: 'Olive';
     src: url('../../fonts/AntiqueOliveRegular.ttf') format('truetype');
 }
@@ -7,6 +12,17 @@
     font-family: 'Chap';
     src: url('../../fonts/Chaparral.ttf') format('truetype');
 }
+
+@font-face{
+    font-family: 'Aubrey';
+    src: url('../../fonts/Aubrey.TTF') format('truetype');
+}
+
+@font-face{
+    font-family: 'Neoteric';
+    src: url('../../fonts/Neoteric.ttf') format('truetype');
+}
+
 
 .header-container{
     
@@ -17,7 +33,7 @@
 }
 
 #header-headline{
-    font-family: Olive;
+    
 }
 
 .header-left-col{
@@ -43,32 +59,32 @@
     height: auto;
 }
 
+.header-p{
+    margin-bottom: 10px;
+}
+
 .createAcct{
     display: block;
     margin: 0 auto;
     padding: 12px 15px;
-    border: 2px solid #00d4c7;
-    background: #00d4c7;
+    border: 2px solid #00c0bd;
+    background: #00c0bd;
     font-size: 16px;
     font-weight: bold;
-    font-family: Olive;
+    font-family: Neoteric;
     color: white;
-    border-radius: 5px;
+    border-radius: 2px;
     cursor: pointer;
     transition-duration: .5s;
+
 }
 
-.createAcct:hover{
-    display: block;
-    margin: 0 auto;
-    padding: 12px 15px;
-    border: 2px solid #00d4c7;
-    background: white;
-    font-size: 16px;
-    font-weight: bold;
-    font-family: Olive;
-    color: #00d4c7;
-    border-radius: 5px;
-    cursor: pointer;
-    transition-duration: .5s;
+@media only screen and (max-width: 768px){
+
+    .header-left-col{
+        text-align: center;
+    }
+
+    
+
 }

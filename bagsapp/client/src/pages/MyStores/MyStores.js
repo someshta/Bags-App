@@ -7,7 +7,8 @@ import axios from "axios";
 class MyStores extends React.Component{
     
     state = {
-        saved: []
+        saved: [],
+        message: `You haven't saved any stores yet`
     }
 
     componentDidMount(){
