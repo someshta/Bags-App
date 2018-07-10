@@ -1,4 +1,4 @@
-
+require('dotenv').config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
@@ -7,7 +7,6 @@ const app = express();
 var session = require('express-session')
 const axios = require("axios");
 const PORT = process.env.PORT || 3001;
-require('dotenv').config();
 
 // Define middleware here
 app.use(bodyParser.urlencoded({ extended: true }));
