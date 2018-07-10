@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Nav from './components/Nav';
 import Header from './components/Header';
 import Home from './pages/Home';
@@ -20,13 +20,15 @@ class App extends Component {
       <Router>
         <div>
         <Nav />
-          <Route exact path="/" component={HomeComponent}/>
-          {/* <Route exact path="/userhome" component={UserHome} /> */}
-          <Route exact path="/install" component={HowToInstall} />
-          <Route exact path="/mystores" component={MyStores} />
-          <Route exact path="/signin" component={SignIn} />
-          <Route exact path="/createaccount" component={CreateAcct} />
-          <Route exact path='*' component={HomeComponent}/>
+          <Switch>
+            <Route exact path="/" component={HomeComponent}/>
+            {/* <Route exact path="/userhome" component={UserHome} /> */}
+            <Route exact path="/install" component={HowToInstall} />
+            <Route exact path="/mystores" component={MyStores} />
+            <Route exact path="/signin" component={SignIn} />
+            <Route exact path="/createaccount" component={CreateAcct} />
+            <Route exact path='*' component={HomeComponent}/>
+          </Switch>
           </div>
           </Router>
     );
