@@ -13,6 +13,8 @@ const client = require('twilio')(accountSid, authToken);
 
 //checking if user is logged in
 const isUserLoggedIn = req => {
+    if (!req.params.userId || !req.session.userIds) return false;
+
     if (req.session){
         const sessionUserId = req.session.userIds.find(id => {
             return id === req.params.userId

@@ -14,16 +14,19 @@ import './App.css';
 class App extends Component {
 
   render() {
+    const HomeComponent = localStorage.getItem('userId') !== null ? UserHome : Home;
+
     return (
       <Router>
         <div>
         <Nav />
-          <Route exact path="/" component={Home} />
-          <Route exact path="/userhome" component={UserHome} />
+          <Route exact path="/" component={HomeComponent}/>
+          {/* <Route exact path="/userhome" component={UserHome} /> */}
           <Route exact path="/install" component={HowToInstall} />
           <Route exact path="/mystores" component={MyStores} />
           <Route exact path="/signin" component={SignIn} />
           <Route exact path="/createaccount" component={CreateAcct} />
+          <Route path='*' component={HomeComponent}/>
           </div>
           </Router>
     );
