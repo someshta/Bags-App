@@ -130,7 +130,8 @@ class UserHome extends React.Component {
             const newStore = {...this.state.results[storeIdx], saved: true}
             // slice the state content before this store idx
             this.setState({
-                results: [...this.state.results.slice(0, storeIdx), newStore, ...this.state.results.slice(storeIdx+1)]
+                results: [...this.state.results.slice(0, storeIdx), newStore, ...this.state.results.slice(storeIdx+1)],
+                saved: {...this.state.saved, [storeId]: true}
             })
         }).catch(err => {
             console.log(err)
