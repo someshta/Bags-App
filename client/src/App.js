@@ -22,7 +22,7 @@ class App extends Component {
         <Nav />
           <Switch>
             <Route exact path="/" component={HomeComponent}/>
-            {/* <Route exact path="/userhome" component={UserHome} /> */}
+            <Route exact path="/userhome" component={UserHome} />
             <Route exact path="/install" component={HowToInstall} />
             <Route exact path="/mystores" component={MyStores} />
             <Route exact path="/signin" component={SignIn} />
