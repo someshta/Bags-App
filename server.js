@@ -25,7 +25,7 @@ app.use(session({
 }))
 
 // Add routes, both API and view
-app.use(APIroutes);
+app.use('/api', APIroutes);
 
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/bagsdb");
@@ -35,3 +35,4 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/bagsdb");
 app.listen(PORT, function() {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
+
