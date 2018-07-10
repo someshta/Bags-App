@@ -26,7 +26,7 @@ class SignIn extends React.Component {
                 email: this.state.email,
                 password: this.state.password
             }
-            axios.post('/login', user)
+            axios.post('/api/login', user)
             .then(response => {
             
             const {error, user} = response.data;

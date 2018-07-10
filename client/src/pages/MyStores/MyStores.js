@@ -18,7 +18,7 @@ class MyStores extends React.Component{
     getUsersStores = () => {
         const user = localStorage.getItem('userId');
 
-        axios.get(`/stores/${user}`)
+        axios.get(`/api/stores/${user}`)
         .then(response => {
             this.setState({
                 saved: response.data[0].stores
@@ -36,7 +36,7 @@ class MyStores extends React.Component{
             // this.setState({ saved: stores });
         const userId = localStorage.getItem('userId');
 
-        axios.delete(`/stores/${storeId}/user/${userId}`)
+        axios.delete(`/api/stores/${storeId}/user/${userId}`)
         .then(response => {
             console.log("storehas been deleted: ", response);
             this.getUsersStores();

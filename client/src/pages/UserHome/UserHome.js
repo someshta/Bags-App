@@ -70,7 +70,7 @@ class UserHome extends React.Component {
     //makes query and sets state to results
     makeApiCall = (lat, lng, query) => {
     
-        axios.get(`/getstores/${lat}/${lng}/${query}`).then(res => {
+        axios.get(`/api/getstores/${lat}/${lng}/${query}`).then(res => {
             //save results in variable
             var stores = res.data.results;
             
@@ -120,7 +120,7 @@ class UserHome extends React.Component {
             googleId: storeId
         }
         console.log(store);
-        axios.post(`/stores/${user}`, store)
+        axios.post(`/api/stores/${user}`, store)
         .then(response => {
 
             // Update this store in our state
@@ -141,7 +141,7 @@ class UserHome extends React.Component {
     getUsersStores = () => {
         const user = localStorage.getItem('userId');
 
-        axios.get(`/stores/${user}`)
+        axios.get(`/api/stores/${user}`)
         .then(response => {
             const mySaved = {};
             const myLoc = [];
@@ -199,7 +199,7 @@ class UserHome extends React.Component {
             storeName: storeName
         }
 
-        axios.post('/reminder', reminder)
+        axios.post('/api/reminder', reminder)
         .then(response => {
             console.log("/reminder", response)
         });
@@ -213,7 +213,7 @@ class UserHome extends React.Component {
             storeName: storeName
         }
 
-        axios.post('/checktime', userInfo)
+        axios.post('/api/checktime', userInfo)
         .then(response => {
             console.log("checktime response", response);
             // maybe we've never sent a reminder for this store to this user => response.data.length === 0 => send a reminder

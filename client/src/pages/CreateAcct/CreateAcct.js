@@ -63,7 +63,7 @@ class CreateAcct extends React.Component {
             phone: this.state.phone
             }
 
-            axios.post('/user', newUser)
+            axios.post('/api/user', newUser)
             .then(response => {
                 if(response.data.newUser) {
                     console.log("User created successfully");
