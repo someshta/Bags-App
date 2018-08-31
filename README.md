@@ -1,5 +1,5 @@
 
-### BAGS- your friendly reminder to remember to bring those bags into the grocery store!
+# BAGS- your friendly reminder to remember to bring those bags into the grocery store!
 
 ## How it works
 * Create an account- it's free and easy!
